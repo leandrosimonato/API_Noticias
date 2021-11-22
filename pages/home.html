@@ -6,9 +6,9 @@
                 <div class="title-destaque-descricao">
                     <!--feito em off o link aqui e adicionado nos estilos-->
                     <a href="<%= posts[2].slug %>">
-                        <h2>
+                        <!--<h2>
                             <%= posts[2].titulo %>
-                        </h2>
+                        </h2>-->
                     </a>
                     <p>
                         <%- posts[2].descricaoCurta %>...
@@ -57,22 +57,19 @@
                                         <%= postsTop[i].titulo %>
                                     </h4>
                                     <p>
-                                        <%- postsTop[i].descricaoCurta %>... - <span
-                                                style="font-size: 12px;font-weight: bold;">(<%= postsTop[i].views %>
-                                                    views)</span>
+                                    <%- postsTop[i].descricaoCurta %>... -
+																		<span style="font-size: 12px;font-weight: bold;">(<%= postsTop[i].views %>
+                                    views)</span>
                                     </p>
                                     <a href="<%= postsTop[i].slug %>">Saiba mais</a>
                                 </div>
                             </div>
-                            <% } %>
+                          <% } %>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <%- include('partials/footer.html') %>
-
-        </body>
-
-        </html>
+  <%- include('partials/footer.html') %>
+</body>
+</html>

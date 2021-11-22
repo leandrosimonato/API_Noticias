@@ -8,7 +8,7 @@ const Posts = require('./Posts.js');
 
 mongoose
   .connect(
-    'mongodb+srv://root:leandro@noticias.olqp8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    'mongodb+srv://root:leandro@noticias.olqp8.mongodb.net/noticias?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(function () {
@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
           return {
             titulo: val.titulo,
             conteudo: val.conteudo,
-            descricaoCurta: val.conteudo.substr(0, 80),
+            descricaoCurta: val.conteudo.substr(0, 180),
             imagem: val.imagem,
             slug: val.slug,
             categoria: val.categoria,
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
               return {
                 titulo: val.titulo,
                 conteudo: val.conteudo,
-                descricaoCurta: val.conteudo.substr(0, 100),
+                descricaoCurta: val.conteudo.substr(0, 200),
                 imagem: val.imagem,
                 slug: val.slug,
                 categoria: val.categoria,
@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
     Posts.find(
       { titulo: { $regex: req.query.busca, $options: 'i' } },
       function (err, posts) {
-        console.log(posts);
+        //console.log(posts);
         posts = posts.map(function (val) {
           return {
             titulo: val.titulo,

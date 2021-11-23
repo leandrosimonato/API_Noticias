@@ -156,7 +156,12 @@
 	"material-icon-theme.activeIconPack": "nest",
 	"screencastMode.onlyKeyboardShortcuts": true,
 	"cSpell.words": [
+		"acao",
 		"conteudo",
-		"descricao"
+		"deletar",
+		"descricao",
+		"fileupload",
+		"Logar",
+		"usuarios"
 	],
 }

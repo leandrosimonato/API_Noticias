@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link href="/public/painel-style.css" rel="stylesheet" />
+
+    <title>Painel do admin</title>
+  </head>
+  <br>
+    <div class="header-painel">
+      <h2>Cadastro de Notícias</h2>
+    </div>
+		<div class="center">
+    <form enctype="multipart/form-data" method="post" action="/admin/cadastro">
+      <input
+        type="text"
+        name="titulo_noticia"
+        placeholder="Titulo da notícia"
+      />
+      <input
+        type="text"
+        name="url_imagem"
+        placeholder="Link da imagem da notícia"
+      />
+			<input
+        type="text"
+        name="slug"
+        placeholder="Slug"
+      />
+			<input
+        type="file"
+        name="arquivo"
+      />
+      <textarea name="noticia" placeholder="Notícia..."></textarea>
+      <input type="submit" name="acao" value="Cadastrar!" />
+    </form>
+		<br/><br/>
+    <div class="header-painel-noticia">
+      <h3>Listando as Notícias</h3>
+    </div>
+
+	<% for(let i = 0; i < posts.length; i++) { %>
+		<div class="noticia-single">
+			<p>Título Notícia: <%= posts[i].titulo %></p>
+			<a href="/admin/deletar/<%= posts[i].id %>">(X)</a>
+		</div>
+  <% } %>
+
+		</div>
+    <footer>
+      <p>Todos os direitos reservados a PortalNews</p>
+    </footer>
+  </body>
+</html>

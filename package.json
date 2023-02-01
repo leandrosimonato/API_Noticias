@@ -15,7 +15,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
     "express-session": "^1.17.2",
-    "mongoose": "^5.13.2",
+    "mongoose": "^5.13.15",
     "nodemon": "^2.0.9"
   }
 }
